@@ -3,9 +3,7 @@
 # 模拟登陆
 
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
-import codecs
 
 if __name__ == '__main__':
 
@@ -29,8 +27,12 @@ if __name__ == '__main__':
     # 生成登陆后快照
     driver.save_screenshot("douban.png")
 
-    f=open("douban.html", "w")
-        # strin=u''.join((driver.page_source)).encode('utf-8').strip()
-    f.write(driver.page_source.encode('utf-8'))
-        # p.agent_info = u' '.join((agent_contact, agent_telno)).encode('utf-8').strip()
+    with open("douban.html", "w") as file:
+        file.write(driver.page_source.encode('utf-8'))
+
+    # 这里用 with open 之前总是报错，还是推荐with open的，自带close()
+    # f = open("douban1.html", "w")
+    # f.write(driver.page_source.encode('utf-8'))
+    # f.close()
+    
     driver.quit()

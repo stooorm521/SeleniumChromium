@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import codecs;
+import urllib2
+from bs4 import BeautifulSoup
 def python_codecs_demo():
     """demo how to use codecs to handle file with specific encoding"""
     testStrUnicode = u"中文测试Unicode字符串";
