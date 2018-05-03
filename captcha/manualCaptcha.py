@@ -29,6 +29,7 @@ if __name__ == '__main__':
         data['checkCode'] = input('输入验证码：')
         fp.close()
     # 需要给服务端传送的数据，字典格式
+    # douban 表单不止这几项，已经废弃
     data['username'] = '850063314@qq.com'
     data['password'] = '2w2w2w2w'
     response3 = s.post(url=url, data=data, headers=headers)
